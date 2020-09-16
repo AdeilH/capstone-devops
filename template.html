@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cute Doggos</title>
+</head>
+<style>
+    .center {
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+    .imgwrap {
+        height: auto;
+        width: auto;
+    }
+    .container {
+  width: 300px;
+  border: dashed blue 1px;
+}
+
+.container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+</style>
+
+<body style="background-color:#727a74">
+    
+    <div class="center">
+        <img src={{.URL}} alt = {{.Breed}} style="width:480px; height: 480px;" class="imgwrap">
+    </div>
+    <div class="center">
+            <button value="Refresh Page" onClick="window.location.reload();">another doggo</button>
+    </div>
+    <div class="center">
+        <h3 style="color: #FFFFFF">{{.Breed}}</h3>
+    </div>
+    <div>
+        <h5 style="color: #FFFFFF">Thanks to <a href="https://dog.ceo/dog-api/" target="_blank">https://dog.ceo/dog-api/</a> for images data</h5>
+    </div>
+</body>
+</html>
