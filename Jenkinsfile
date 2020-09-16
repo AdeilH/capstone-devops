@@ -15,7 +15,7 @@ pipeline{
               steps {
                   withDockerRegistry([url: "", credentialsId: "adeel"]) {
                       sh "docker tag gowebapp gowebapp/adeelhussain13"
-                      sh 'docker push adeelhussain13/gowebapp'
+                      sh 'docker push gowebapp/adeelhussain13'
                   }
               }
          }
