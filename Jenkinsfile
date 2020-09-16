@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('lint'){
             steps{
-            sh 'tidy -q -e *.html'
+            sh 'golint main.go'
                }
            }
         stage('build docker container'){
@@ -21,7 +21,7 @@ pipeline{
          }
          stage('Deploying to AWS') {
               steps{
-                  withAWS(credentials: 'aws', region: 'us-west-2') {
+                  withAWS(credentials: 'adeel-aws', region: 'us-west-2') {
                       sh "aws eks --region us-west-2 update-kubeconfig --name capstonecluster"
                       sh "kubectl config use-context arn:aws:eks:us-west-2:988212813982:cluster/capstonecluster"
                       sh "kubectl set image deployments/gowebapp gowebapp=adeelhussain13/gowebapp:latest"
