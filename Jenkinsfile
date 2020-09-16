@@ -8,14 +8,14 @@ pipeline{
            }
         stage('build docker container'){
             steps{
-            sh 'docker build -t gowebapp .'   
+            sh 'sudo docker build -t gowebapp .'   
             }
         }
         stage('Push Docker Image') {
               steps {
                   withDockerRegistry([url: "", credentialsId: "adeel"]) {
-                      sh "docker tag gowebapp gowebapp/adeelhussain13"
-                      sh 'docker push adeelhussain13/gowebapp'
+                      sh "sudo docker tag gowebapp gowebapp/adeelhussain13"
+                      sh 'sudo docker push adeelhussain13/gowebapp'
                   }
               }
          }
