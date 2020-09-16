@@ -14,8 +14,8 @@ pipeline{
         stage('Push Docker Image') {
               steps {
                   withDockerRegistry([url: "", credentialsId: "adeel"]) {
-                      sh "docker tag gowebapp gowebapp/adeelhussain13"
-                      sh 'docker push gowebapp/adeelhussain13'
+                      sh "docker tag gowebapp adeelhussain13/gowebapp"
+                      sh 'docker push adeelhussain13/gowebapp'
                   }
               }
          }
