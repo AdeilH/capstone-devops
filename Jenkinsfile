@@ -22,7 +22,6 @@ pipeline{
          stage('Deploying to AWS') {
               steps{
                   withAWS(credentials: 'adeel-aws', region: 'us-west-2') {
-                      sh "kubectl set image deployments/gowebapp gowebapp=adeelhussain13/gowebapp:latest"
                       sh "kubectl apply -f deployment.yml"
                       sh "kubectl get nodes"
                       sh "kubectl get deployment"
