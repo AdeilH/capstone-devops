@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage('lint'){
             steps{
+            sh 'hadolint Dockerfile'
             sh 'golint main.go'
                }
            }
@@ -22,7 +23,6 @@ pipeline{
          stage('Deploying to AWS') {
               steps{
                   withAWS(credentials: 'adeel-aws', region: 'us-west-2') {
-                      sh 'kubectl set image deployments/gowebapp gowebapp=adeelhussain13/gowebapp'
                       sh "kubectl apply -f deployment.yml"
                       sh "kubectl get nodes"
                       sh "kubectl get deployment"
