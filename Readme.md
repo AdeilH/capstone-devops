@@ -22,3 +22,7 @@ data is from: https://dog.ceo/dog-api/
 4. Set up kubectl 
 5. Set up infrastructure using cloudformation
 6. Run pipeline
+
+### WebApp deployed at
+
+[WebApp](http://a35fb95c574e04b11a525c71ee8b83f7-1873893325.us-west-2.elb.amazonaws.com:8000/)
