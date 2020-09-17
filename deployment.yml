@@ -2,9 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gowebapp
+  namespace: mynamespace
   labels:
     app: gowebapp
-  namespace: default
+    namespace: mynamespace
 spec:
   replicas: 3
   selector:
@@ -21,11 +22,11 @@ spec:
         app: gowebapp
     spec:
       containers:
-        - image: sabbir33/gowebapp
+        - image: adeelhussain13/gowebapp
           imagePullPolicy: Always
           name: gowebapp
           ports:
-            - containerPort: 80
+            - containerPort: 8000
 
 ---
 apiVersion: v1
@@ -39,7 +40,7 @@ spec:
   selector:
     app: gowebapp
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 8000
+      targetPort: 8000
       nodePort: 30000
       protocol: TCP
