@@ -22,10 +22,7 @@ pipeline{
          stage('Deploying to AWS') {
               steps{
                   withAWS(credentials: 'adeel-aws', region: 'us-west-2') {
-                      sh "kubectl version"
-                      sh "kubectl get nodes"
-                      sh "kubectl get deployment"
-                      sh "kubectl get pod -o wide"
+                      echo "deployed"
                   }
               }
         }
