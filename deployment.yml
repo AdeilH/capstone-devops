@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: gowebapp
   namespace: mynamespace
+  image: adeelhussain13/gowebapp:latest
   labels:
     app: gowebapp
     namespace: mynamespace
