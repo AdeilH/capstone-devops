@@ -23,6 +23,8 @@ pipeline{
          stage('Deploying to AWS') {
               steps{
                   withAWS(credentials: 'adeel-aws', region: 'us-west-2') {
+                      sh "aws eks --region us-west-2 update-kubeconfig --name my-capstone-cluster"
+                      sh "kubectl config use-context arn:aws:eks:us-west-2:939300009960:cluster/my-capstone-cluster"
                       sh "kubectl apply -f deployment.yml"
                       sh "kubectl get nodes"
                       sh "kubectl get deployment"
