@@ -14,3 +14,11 @@ data is from: https://dog.ceo/dog-api/
 
 
 
+### Steps
+
+1. Write a dockerfile for the webapp
+2. Write jenkins pipeline
+3. Set up the environment in EC2 instance
+4. Set up kubectl 
+5. Set up infrastructure using cloudformation
+6. Run pipeline
